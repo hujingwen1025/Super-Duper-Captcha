@@ -64,7 +64,6 @@ font = ImageFont.truetype("./abb.ttf", 200)
 
 draw.text((0, 0), word_test, fill='black', font=font)
 
-# Apply ripple effect to the text image
 def ripple_effect(img, amplitude=4, wavelength=16):
     width, height = img.size
     new_img = Image.new('RGB', (width, height), 'white')
@@ -80,13 +79,10 @@ def ripple_effect(img, amplitude=4, wavelength=16):
                 dst_pixels[x, y] = (255, 255, 255)
     return new_img
 
-# Apply a ripple effect
 rippled = ripple_effect(image, amplitude=13, wavelength=9)
 
-# Optionally, apply a blur for extra effect
 rippled = rippled.filter(ImageFilter.GaussianBlur(radius=1))
 
-# Save the distorted image
 rippled.save('./m_distorted.png')
 
 image.save('./m.png')
@@ -125,18 +121,16 @@ for a in range(total_frames):
 
         img.save(f"./m{a}.png")
 
-# Generate GIF from the 20 PNGs
 frames = []
 for a in range(total_frames):
     frame = Image.open(f"./m{a}.png")
     frames.append(frame)
 
-# Save as GIF
 frames[0].save(
     "./animated.gif",
     save_all=True,
     append_images=frames[1:],
-    duration=duration_interval,   # duration per frame in ms
+    duration=duration_interval,
     loop=0
 )
 
