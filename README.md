@@ -1,6 +1,8 @@
 # Super-Duper-Captcha
 A very hard captcha which hopefully, AI cannot solve
 -----
+Update: Ok, this is not good, I think AI can solve it
+-----
 ## Usage
 1. Clone repository by executing ```git clone https://github.com/hujingwen1025/Super-Duper-Captcha.git```
 2. Build dependencies by executing ```pip install -r requirements.txt```
